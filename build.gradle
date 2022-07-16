@@ -1,0 +1,34 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    //For SPRING
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.6.2'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.6.2'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.6.2'
+
+
+    //For Lombok
+    compileOnly 'org.projectlombok:lombok:1.18.22'
+    annotationProcessor 'org.projectlombok:lombok:1.18.22'
+
+    // https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-quartz
+    implementation 'org.springframework.boot:spring-boot-starter-quartz:2.6.2'
+
+
+    testImplementation('org.springframework.boot:spring-boot-starter-test:2.6.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
